@@ -1,27 +1,23 @@
 package com.example.financial_management.view;
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.Gravity;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.MenuItem;
 
 import com.example.financial_management.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class EntradaActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class HistoricoActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private BottomNavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_entrada);
+        setContentView(R.layout.activity_historico);
 
         navigationView = (BottomNavigationView) findViewById(R.id.navigationView);
         navigationView.setOnNavigationItemSelectedListener(this);
@@ -61,7 +57,4 @@ public class EntradaActivity extends AppCompatActivity implements BottomNavigati
         return true;
     }
 
-    public void btnSalvaEntrada(View view) {
-        Toast.makeText(getApplicationContext(), "Remunerações", Toast.LENGTH_SHORT).show();
-    }
 }

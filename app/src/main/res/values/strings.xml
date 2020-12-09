@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Criar uma conta</string>
+    <string-array name="spinnerDespesa">
+        <item>Opção 1</item>
+        <item>Opção 2</item>
+        <item>Opção 3</item>
+    </string-array>
+    <string-array name="spinnerEntrada">
+        <item>Opção 1</item>
+        <item>Opção 2</item>
+        <item>Opção 3</item>
+    </string-array>
 </resources>

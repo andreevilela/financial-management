@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.CadastroUsuarioActivity">
+    tools:context=".view.AlteraUsuarioActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -77,14 +77,14 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
     <Button
-        android:id="@+id/btnCadastrar"
+        android:id="@+id/btnAlteraUsuario"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="8dp"
-        android:text="Cadastrar"
-        android:onClick="btnCadastrar"
+        android:text="Alterar"
+        android:onClick="btnAlteraUsuario"
         android:clickable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,10 +97,28 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
-        android:text="Você está no caminho certo!"
+        android:text="Vamos aos ajustes!"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        app:labelVisibilityMode="labeled"
+        app:itemIconSize="30dp"
+        android:background="@color/purple_500"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:itemBackground="@color/purple_500"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/navigation" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.financial_management">
 
-    //PERMISSÃO INTERNET
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -13,25 +12,47 @@
         android:theme="@style/Theme.Financialmanagement"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".view.EntradaActivity"
-            android:label="Insira suas remunerações">
+            android:name=".view.GraficoActivity"
+            android:label="Gráfico" >
         </activity>
+        <activity
+            android:name=".view.HistoricoActivity"
+            android:label="Histórico" />
+        <activity
+            android:name=".view.DeletaEntradaActivity"
+            android:label="Delete suas remunerações" />
+        <activity
+            android:name=".view.AlteraEntradaActivity"
+            android:label="Altere suas remunerações" />
+        <activity
+            android:name=".view.DeletaDespesaActivity"
+            android:label="Delete suas despesas" />
+        <activity android:name=".view.AlteraDespesaActivity"
+            android:label="Altere suas despesas" />
+        <activity
+            android:name=".view.DeletaUsuarioActivity"
+            android:label="Delete sua conta" />
+        <activity
+            android:name=".view.AlteraUsuarioActivity"
+            android:label="Altere sua conta" />
+        <activity
+            android:name=".view.EntradaActivity"
+            android:label="Insira suas remunerações" />
         <activity
             android:name=".view.DespesaActivity"
-            android:label="Insira suas despesas">
-        </activity>
+            android:label="Insira suas despesas" />
         <activity
             android:name=".view.LoginActivity"
-            android:label="Faça seu login">
-        </activity>
+            android:label="Faça seu login" />
         <activity
-            android:name=".view.CadastroUsuarioActivity"
+            android:name=".view.UsuarioActivity"
             android:label="@string/app_name" />
         <activity
             android:name=".view.HomeActivity"
             android:label="Financial Management">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

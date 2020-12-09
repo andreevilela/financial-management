@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.DespesaActivity">
+    tools:context=".view.AlteraDespesaActivity">
 
     <TextView
         android:id="@+id/textView5"
@@ -13,7 +13,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
-        android:text="Informe sua despesa"
+        android:text="Vamos aos ajustes!"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +34,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <Spinner
-        android:id="@+id/spinnerDespesa"
+        android:id="@+id/spinnerAlteraDespesa"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
@@ -46,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <EditText
-        android:id="@+id/editTextDescricaoDespesa"
+        android:id="@+id/editTextDescricaoAlteraDespesa"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -58,10 +58,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerDespesa" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerAlteraDespesa" />
 
     <EditText
-        android:id="@+id/editTextValorDespesa"
+        android:id="@+id/editTextValorAlteraDespesa"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -73,7 +73,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDataDespesa" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextDataAlteraDespesa" />
 
     <Button
         android:id="@+id/btnAlteraDespesa"
@@ -83,14 +83,14 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="8dp"
         android:clickable="true"
-        android:onClick="btnSalvarDespesa"
-        android:text="Salvar"
+        android:onClick="btnAlteraDespesa"
+        android:text="Alterar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextValorDespesa" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextValorAlteraDespesa" />
 
     <EditText
-        android:id="@+id/editTextDataDespesa"
+        android:id="@+id/editTextDataAlteraDespesa"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -101,7 +101,7 @@
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDescricaoDespesa" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextDescricaoAlteraDespesa" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigationView"

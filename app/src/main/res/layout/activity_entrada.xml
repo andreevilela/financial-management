@@ -13,8 +13,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
-        android:text="TextView"
+        android:text="Informe sua remuneração"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,36 +30,38 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:srcCompat="@drawable/entrada"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinnerEntrada"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTextDescricaoEntrada"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="Descrição"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerEntrada" />
 
     <EditText
-        android:id="@+id/editTextNumberDecimal"
+        android:id="@+id/editTextValorEntrada"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -68,11 +71,12 @@
         android:hint="Valor"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextDataEntrada" />
 
     <Button
-        android:id="@+id/btnSalvarEntrada"
+        android:id="@+id/btnEntrada"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -83,5 +87,38 @@
         android:clickable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextValorEntrada" />
+
+    <EditText
+        android:id="@+id/editTextDataEntrada"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="Data"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDescricaoEntrada" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        app:labelVisibilityMode="labeled"
+        app:itemIconSize="30dp"
+        android:background="@color/purple_500"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:itemBackground="@color/purple_500"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/navigation" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
