@@ -47,7 +47,7 @@ public class UsuarioActivity extends AppCompatActivity {
 
     public void btnCadastraUsuario(View view) {
         Usuario obj = new Usuario();
-        obj.setNome(editTextNome.getText().toString());
+        obj.setName(editTextNome.getText().toString());
         obj.setData_nascimento(editTextDataNascimento.getText().toString());
         obj.setEmail(editTextEmail.getText().toString());
         obj.setSenha(editTextSenha.getText().toString());

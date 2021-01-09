@@ -3,7 +3,7 @@ package com.example.financial_management.model;
 public class Usuario {
 
     private int id;
-    private String nome;
+    private String name;
     private String data_nascimento;
     private String email;
     private String senha;
@@ -11,9 +11,9 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(int id, String nome, String data_nascimento, String email, String senha) {
+    public Usuario(int id, String name, String data_nascimento, String email, String senha) {
         this.setId(id);
-        this.setNome(nome);
+        this.setName(name);
         this.setData_nascimento(data_nascimento);
         this.setEmail(email);
         this.setSenha(senha);
@@ -27,12 +27,12 @@ public class Usuario {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getData_nascimento() {

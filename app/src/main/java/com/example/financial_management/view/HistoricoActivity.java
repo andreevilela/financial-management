@@ -34,7 +34,7 @@ public class HistoricoActivity extends AppCompatActivity implements BottomNaviga
         navigationView = (BottomNavigationView) findViewById(R.id.navigationView);
         navigationView.setOnNavigationItemSelectedListener(this);
 
-        campo = findViewById(R.id.recyclerHistorico);
+        campo = findViewById(R.id.historico);
         buscarDados();
     }
 
@@ -79,8 +79,8 @@ public class HistoricoActivity extends AppCompatActivity implements BottomNaviga
                 List<Usuario> lista = response.body();
                 for (Usuario user : lista) {
                     campo.append("\n\nid: "+user.getId()+
-                            "\nNome: "+user.getNome()+
-                            "\nUsername: "+user.getData_nascimento()+
+                            "\nNome: "+user.getName()+
+                            "\nData de Nascimento: "+user.getData_nascimento()+
                             "\nEmail: "+user.getEmail());
                 }
             }
