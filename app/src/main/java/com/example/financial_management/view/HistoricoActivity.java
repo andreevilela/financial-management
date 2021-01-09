@@ -5,14 +5,26 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.example.financial_management.R;
+import com.example.financial_management.model.RetrofitService;
+import com.example.financial_management.model.Usuario;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class HistoricoActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private BottomNavigationView navigationView;
+    private TextView campo;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +33,9 @@ public class HistoricoActivity extends AppCompatActivity implements BottomNaviga
 
         navigationView = (BottomNavigationView) findViewById(R.id.navigationView);
         navigationView.setOnNavigationItemSelectedListener(this);
+
+        campo = findViewById(R.id.recyclerHistorico);
+        buscarDados();
     }
 
     @Override
@@ -55,6 +70,26 @@ public class HistoricoActivity extends AppCompatActivity implements BottomNaviga
         }
 
         return true;
+    }
+
+    private void buscarDados() {
+        RetrofitService.getServico().obterUsuarios().enqueue(new Callback<List<Usuario>>() {
+            @Override
+            public void onResponse(Call<List<Usuario>> call, Response<List<Usuario>> response) {
+                List<Usuario> lista = response.body();
+                for (Usuario user : lista) {
+                    campo.append("\n\nid: "+user.getId()+
+                            "\nNome: "+user.getNome()+
+                            "\nUsername: "+user.getData_nascimento()+
+                            "\nEmail: "+user.getEmail());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Usuario>> call, Throwable t) {
+                Log.e("ResApp", t.getStackTrace().toString());
+            }
+        });
     }
 
 }
