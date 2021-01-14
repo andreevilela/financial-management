@@ -8,14 +8,20 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.financial_management.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DespesaActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private BottomNavigationView navigationView;
+    private Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +30,9 @@ public class DespesaActivity extends AppCompatActivity implements BottomNavigati
 
         navigationView = (BottomNavigationView) findViewById(R.id.navigationView);
         navigationView.setOnNavigationItemSelectedListener(this);
+
+        addItemsOnSpinner();
+
     }
 
     @Override
@@ -58,6 +67,31 @@ public class DespesaActivity extends AppCompatActivity implements BottomNavigati
         }
 
         return true;
+    }
+
+    public void addItemsOnSpinner() {
+
+        spinner = (Spinner) findViewById(R.id.spinnerDespesa);
+        List<String> list = new ArrayList<String>();
+        list.add("Selecione uma categoria");
+        list.add("Bares / restaurantes");
+        list.add("Compras");
+        list.add("Contas residenciais");
+        list.add("Educação");
+        list.add("Lazer");
+        list.add("Mercado");
+        list.add("Moradia");
+        list.add("Presentes");
+        list.add("Saúde");
+        list.add("Serviços");
+        list.add("Taxas bancarias");
+        list.add("Transporte");
+        list.add("TV / Internet / Telefones");
+        list.add("Viagem");
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, list);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(dataAdapter);
     }
 
     public void btnSalvarDespesa(View view) {

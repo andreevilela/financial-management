@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.financial_management.R;
-import com.example.financial_management.model.Usuario;
 
 public class HomeActivity extends AppCompatActivity {
 

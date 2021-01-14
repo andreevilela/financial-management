@@ -1,4 +1,4 @@
-package com.example.financial_management.model;
+package com.example.financial_management.controller;
 
 public class Usuario {
 

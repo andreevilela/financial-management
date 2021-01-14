@@ -19,7 +19,7 @@
 
     <Spinner
         android:id="@+id/spinnerGrafico"
-        android:layout_width="158dp"
+        android:layout_width="185dp"
         android:layout_height="25dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"

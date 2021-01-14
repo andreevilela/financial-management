@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -14,9 +16,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.financial_management.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class EntradaActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private BottomNavigationView navigationView;
+    private Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +31,9 @@ public class EntradaActivity extends AppCompatActivity implements BottomNavigati
 
         navigationView = (BottomNavigationView) findViewById(R.id.navigationView);
         navigationView.setOnNavigationItemSelectedListener(this);
+
+        addItemsOnSpinner();
+
     }
 
     @Override
@@ -59,6 +68,22 @@ public class EntradaActivity extends AppCompatActivity implements BottomNavigati
         }
 
         return true;
+    }
+
+    public void addItemsOnSpinner() {
+
+        spinner = (Spinner) findViewById(R.id.spinnerEntrada);
+        List<String> list = new ArrayList<String>();
+        list.add("Selecione uma categoria");
+        list.add("Aluguel");
+        list.add("Bônus");
+        list.add("Outras rendas");
+        list.add("Salário");
+        list.add("Rendimento");
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, list);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(dataAdapter);
     }
 
     public void btnSalvaEntrada(View view) {

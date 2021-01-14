@@ -7,13 +7,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.financial_management.R;
 import com.example.financial_management.model.RetrofitService;
-import com.example.financial_management.model.Usuario;
+import com.example.financial_management.controller.Saida;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -23,6 +26,7 @@ import retrofit2.Response;
 public class HistoricoActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private BottomNavigationView navigationView;
+    private Spinner spinner;
     private TextView campo;
 
 
@@ -34,8 +38,10 @@ public class HistoricoActivity extends AppCompatActivity implements BottomNaviga
         navigationView = (BottomNavigationView) findViewById(R.id.navigationView);
         navigationView.setOnNavigationItemSelectedListener(this);
 
+        addItemsOnSpinner();
         campo = findViewById(R.id.historico);
         buscarDados();
+
     }
 
     @Override
@@ -72,21 +78,34 @@ public class HistoricoActivity extends AppCompatActivity implements BottomNaviga
         return true;
     }
 
+    public void addItemsOnSpinner() {
+
+        spinner = (Spinner) findViewById(R.id.spinnerHistorico);
+        List<String> list = new ArrayList<String>();
+        list.add("OUTUBRO - 20");
+        list.add("NOVEMBRO - 20");
+        list.add("DEZEMBRO - 20");
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, list);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(dataAdapter);
+    }
+
     private void buscarDados() {
-        RetrofitService.getServico().obterUsuarios().enqueue(new Callback<List<Usuario>>() {
+        RetrofitService.getServico().obterSaidas().enqueue(new Callback<List<Saida>>() {
             @Override
-            public void onResponse(Call<List<Usuario>> call, Response<List<Usuario>> response) {
-                List<Usuario> lista = response.body();
-                for (Usuario user : lista) {
-                    campo.append("\n\nid: "+user.getId()+
-                            "\nNome: "+user.getName()+
-                            "\nData de Nascimento: "+user.getData_nascimento()+
-                            "\nEmail: "+user.getEmail());
+            public void onResponse(Call<List<Saida>> call, Response<List<Saida>> response) {
+                List<Saida> lista = response.body();
+                for (Saida out : lista) {
+                    campo.append("\n\nCategoria: "+out.getCategoryOutName()+
+                            "\nDescrição: "+out.getDescricao()+
+                            "\nData: "+out.getDataFormat()+
+                            "\nValor: "+out.getValor());
                 }
             }
 
             @Override
-            public void onFailure(Call<List<Usuario>> call, Throwable t) {
+            public void onFailure(Call<List<Saida>> call, Throwable t) {
                 Log.e("ResApp", t.getStackTrace().toString());
             }
         });

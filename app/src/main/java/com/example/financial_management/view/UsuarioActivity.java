@@ -2,30 +2,14 @@ package com.example.financial_management.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.financial_management.R;
-import com.example.financial_management.model.Usuario;
-
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
+import com.example.financial_management.controller.Usuario;
 
 public class UsuarioActivity extends AppCompatActivity {
 
